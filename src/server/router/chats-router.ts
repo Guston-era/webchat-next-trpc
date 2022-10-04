@@ -6,12 +6,14 @@ import { ChatsModel } from '../db/models/chatsModel'
 export const chatsRouter = createRouter()
   .query('list', {
     async resolve({ ctx }) {
-      try {
-        await connectMongo() //connect to the database
-        return await ChatsModel.find()
-      } catch (error) {
-        console.log(error)
-      }
+      //   try {
+      //     await connectMongo() //connect to the database
+      //     return await ChatsModel.find()
+      //   } catch (error) {
+      //     console.log('didnt fetch=>', error)
+      //   }
+
+      return [{ _id: 'hfhfhhfhfh', title: 'heeyeyyeyeyey' }]
     },
   })
   .mutation('add', {
