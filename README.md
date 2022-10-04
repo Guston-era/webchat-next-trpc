@@ -40,7 +40,7 @@ To get a local copy up and running follow these simple example steps.
 ### Cloning the project
 
 ```
-git clone  https://github.com/Guston-era/webchat-next-trpc.git <Your-Build-Directory>
+git clone  https://github.com/Guston-era/webchat-next-trpc.git 
 
 ```
 
