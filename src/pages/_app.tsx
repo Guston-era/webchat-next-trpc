@@ -1,9 +1,13 @@
-import '../styles/globals.css'
 import { withTRPC } from '@trpc/next'
 import type { AppRouter } from '../server/router'
 import type { AppType } from 'next/dist/shared/lib/utils'
 import superjson from 'superjson'
+import '../styles/globals.css'
 import '@fontsource/poppins'
+
+// const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
+//   return <Component {...pageProps} />
+// }
 
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return <Component {...pageProps} />

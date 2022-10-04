@@ -13,7 +13,13 @@ export const chatsRouter = createRouter()
       //     console.log('didnt fetch=>', error)
       //   }
 
-      return [{ _id: 'hfhfhhfhfh', title: 'heeyeyyeyeyey' }]
+      return [
+        {
+          _id: Object('gdgdgdgdgdggdg'),
+          title: 'heeyeyyeyeyey',
+          createdAt: 'hddgdggd',
+        },
+      ]
     },
   })
   .mutation('add', {
