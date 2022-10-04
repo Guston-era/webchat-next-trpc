@@ -21,6 +21,41 @@ interface CardFormProps {
 interface ListItemProps {
   item: ChatMessage
 }
+function formatJSONDate(date: string): string {
+  //helper functions
+  const prependZero = (val: number): string => {
+    if (String(val).length === 1) {
+      return '0' + val
+    }
+    return String(val)
+  }
+
+  const today = new Date()
+
+  const thatTime = new Date(date)
+
+  const hourDifference = today.getHours() - thatTime.getHours()
+  const minutesDifference = today.getMinutes() - thatTime.getMinutes()
+
+  //check for hours difference
+  if (hourDifference === 0) {
+    //check for time in mins
+    return minutesDifference + ' mins ago'
+  } else if (hourDifference >= 1 && hourDifference <= 12) {
+    //hours and minutes passed
+    return hourDifference + ' hr ' + Math.abs(minutesDifference) + ' mins ago'
+  } else {
+    return (
+      thatTime.toISOString().slice(0, 10) +
+      ' ' +
+      prependZero(thatTime.getHours()) +
+      ':' +
+      prependZero(thatTime.getMinutes()) +
+      ':' +
+      prependZero(thatTime.getSeconds())
+    )
+  }
+}
 
 export const Card: NextPage<CardProps> = ({ children }) => {
   return (
@@ -66,7 +101,7 @@ const ListItemComponent: NextPage<ListItemProps> = ({ item }) => {
     <div className="box sb2">
       <h2 className="text-gray-600 tracking-wide text-sm">{item.title}</h2>
       <small>
-        <sub className="mt-3">{item.createdAt}</sub>
+        <sub className="mt-3">{formatJSONDate(item.createdAt)}</sub>
       </small>
     </div>
   )
@@ -96,20 +131,7 @@ export const CardForm: NextPage<CardFormProps> = ({
           type="button"
           onClick={submit}
         >
-          <svg
-            className="w-4 h-4"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M12 6v6m0 6v6m0-6h6m-6 0H6"
-            />
-          </svg>
+          Send
         </button>
       </div>
     </div>
