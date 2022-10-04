@@ -9,7 +9,7 @@ import {
 // import { .... } from "@prisma/client";
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useCallback, useState, useRef, useLayoutEffect } from 'react'
+import { useCallback, useState, useRef, useEffect } from 'react'
 import { trpc } from '../utils/trpc'
 
 const Home: NextPage = () => {
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       refetch()
     },
   })
-  useLayoutEffect(() => {
+  useEffect(() => {
     // console.log('i am user.', user.user_type)
     if (scrollRef?.current) {
       scrollRef.current.scrollIntoView()
