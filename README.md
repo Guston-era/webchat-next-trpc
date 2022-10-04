@@ -12,11 +12,15 @@
 - [typescript](https://www.typescriptlang.org/) for strong type-checking
 - [trpc](https://trpc.io/) for client-api communication with [zod](https://github.com/colinhacks/zod) for schema validation
 - [nextjs](https://nextjs.org/) for [react](https://reactjs.org/) clients and [api routes](https://nextjs.org/docs/api-routes/introduction)
-- [MongoDB] for storage
+- [MongoDB](https://www.mongodb.com/) for storage
 
 ## Live Demo
 
 [Link to vercel deploy](https://webchat-next-trpc.vercel.app/)
+
+## Screenshot
+![image](https://user-images.githubusercontent.com/84548265/193922187-768b196e-be2a-403a-b8a6-fb7ff365f696.png)
+
 
 ### Prerequisites
 
