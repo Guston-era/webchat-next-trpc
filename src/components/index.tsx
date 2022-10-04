@@ -17,3 +17,7 @@ interface CardFormProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   submit: () => void
 }
+
+interface ListItemProps {
+  item: ChatMessage
+}
