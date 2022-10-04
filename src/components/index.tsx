@@ -109,12 +109,6 @@ export const CardForm: NextPage<CardFormProps> = ({
   return (
     <div className="bg-white w-5/6 md:w-4/6 lg:w-3/6 xl:w-2/6 rounded-lg drop-shadow-md mt-4">
       <div className="relative">
-        {/* <input
-          className="w-full py-4 pl-3 pr-16 text-sm rounded-lg typein"
-          type="text"
-          placeholder="Enter Message..."
-         
-        /> */}
         <textarea
           className="w-full py-4 pl-3 pr-16 text-sm rounded-lg typein"
           placeholder="Enter Message..."
@@ -125,6 +119,7 @@ export const CardForm: NextPage<CardFormProps> = ({
           className="absolute p-2 text-white -translate-y-1/2 bg-blue-600 rounded-full top-1/2 right-4"
           type="button"
           onClick={submit}
+          style={{ backgroundColor: !value ? '#9ac2df' : undefined }}
         >
           Send
         </button>
