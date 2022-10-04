@@ -18,10 +18,13 @@ const Home: NextPage = () => {
   const { data: list, refetch, isLoading } = trpc.useQuery(['msg.list'])
 
   const insertMutation = trpc.useMutation(['msg.add'], {
-    onSuccess: () => refetch(),
+    onSuccess: () => {
+      refetch()
+      window.scrollTo(0, document.body.scrollHeight)
+    },
   })
 
-  const insertOne = useCallback(() => {
+  const sendMessage = useCallback(() => {
     if (itemName === '') return
 
     insertMutation.mutate({
@@ -55,7 +58,7 @@ const Home: NextPage = () => {
           <CardForm
             value={itemName}
             onChange={(e) => setItemName(e.target.value)}
-            submit={insertOne}
+            submit={sendMessage}
           />
         </Card>
       </main>
