@@ -9,20 +9,26 @@ import {
 // import { .... } from "@prisma/client";
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useRef, useLayoutEffect } from 'react'
 import { trpc } from '../utils/trpc'
 
 const Home: NextPage = () => {
   const [itemName, setItemName] = useState<string>('')
+  const scrollRef = useRef<HTMLElement>(null)
 
   const { data: list, refetch, isLoading } = trpc.useQuery(['msg.list'])
 
   const insertMutation = trpc.useMutation(['msg.add'], {
     onSuccess: () => {
       refetch()
-      window.scrollTo(0, document.body.scrollHeight)
     },
   })
+  useLayoutEffect(() => {
+    // console.log('i am user.', user.user_type)
+    if (scrollRef?.current) {
+      scrollRef.current.scrollIntoView()
+    }
+  }, [list])
 
   const sendMessage = useCallback(() => {
     if (itemName === '') return
@@ -52,6 +58,7 @@ const Home: NextPage = () => {
                 {list?.map((item) => (
                   <ListItem key={item._id.toString()} item={item} />
                 ))}
+                <span ref={scrollRef} />
               </List>
             )}
           </CardContent>

@@ -34,31 +34,6 @@ function formatJSONDate(date: string): string {
 
   const thatTime = new Date(date)
 
-  // const hourDifference = today.getHours() - thatTime.getHours()
-  // const minutesDifference = today.getMinutes() - thatTime.getMinutes()
-
-  // //check for hours difference
-  // if (hourDifference === 0) {
-  //   //check for time in mins
-  //   return Math.abs(minutesDifference) + ' mins ago'
-  // } else if (hourDifference >= 1 && hourDifference <= 12) {
-  //   //get minutes difference
-  //   if (Math.abs(minutesDifference) > 60 && Math.abs(hourDifference) === 1) {
-  //     return Math.abs(minutesDifference) + ' minse ago'
-  //   } else if (
-  //     Math.abs(minutesDifference) < 60 &&
-  //     Math.abs(hourDifference) === 1
-  //   ) {
-  //     return 60 - Math.abs(minutesDifference) + ' mins ago'
-  //   }
-  //   //hours and minutes passed
-  //   return (
-  //     Math.abs(hourDifference) +
-  //     ' hr ' +
-  //     Math.abs(minutesDifference) +
-  //     ' mins ago'
-  //   )
-  // } else {
   return (
     thatTime.toISOString().slice(0, 10) +
     ' ' +
