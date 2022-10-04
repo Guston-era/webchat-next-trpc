@@ -21,14 +21,16 @@ interface CardFormProps {
 interface ListItemProps {
   item: ChatMessage
 }
+
+const prependZero = (val: number): string => {
+  if (String(val).length === 1) {
+    return '0' + val
+  }
+  return String(val)
+}
+
 function formatJSONDate(date: string): string {
   //helper functions
-  const prependZero = (val: number): string => {
-    if (String(val).length === 1) {
-      return '0' + val
-    }
-    return String(val)
-  }
 
   const today = new Date()
 
@@ -43,7 +45,6 @@ function formatJSONDate(date: string): string {
     ':' +
     prependZero(thatTime.getSeconds())
   )
-  // }
 }
 
 export const Card: NextPage<CardProps> = ({ children }) => {
