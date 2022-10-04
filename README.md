@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# TRPC Next JS WebCHAT
+
+"TRPC Next JS WebCHAT" is a web app built on top of TRPC and NextJS. It is a simple single chat room where anyone can enter and text and their text will be seen by others .
+
+## The key features are:
+
+- Anyone can enter a message into the single (global) room
+- Messages are displayed with their timestamp
+
+## Built With
+
+- [typescript](https://www.typescriptlang.org/) for strong type-checking
+- [trpc](https://trpc.io/) for client-api communication with [zod](https://github.com/colinhacks/zod) for schema validation
+- [nextjs](https://nextjs.org/) for [react](https://reactjs.org/) clients and [api routes](https://nextjs.org/docs/api-routes/introduction)
+- [MongoDB] for storage
+
+## Live Demo
+
+[Link to vercel deploy](https://webchat-next-trpc.vercel.app/)
+
+### Prerequisites
+
+The basic requirements for building the executable are:
+
+- A working browser application (Google chrome, Mozilla Fire fox, Microsoft edge ...)
+- Have a good knowledge on how to parse UI designs
+- Have VSCode or other text editor installed. [Link to download VSCode](https://code.visualstudio.com/download)
+- Install node package. [Link to download node](https://nodejs.org/en/download/)
+- Have git installed.[Link to download git](https://git-scm.com/downloads)
+- Create a github repository.
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple example steps.
 
-```bash
-npm run dev
-# or
-yarn dev
+### Cloning the project
+
+```
+git clone  https://github.com/Guston-era/webchat-next-trpc.git <Your-Build-Directory>
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+cd <Your-Build-Directory>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Getting packages and dependencies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To get all package modules required to build the project run:
 
-## Learn More
+```
+npm install or `yarn`
+```
 
-To learn more about Next.js, take a look at the following resources:
+every package module required to build the project is listed in the package.json file. this is used as a reference to get all dependencies.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Running
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run the program on a browser through a server run this command in your cli
 
-## Deploy on Vercel
+```
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This should open the page in your localhost on port 3000. then you'd be able to view the built page generated.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🤝 Contributing
+
+Feel free to check the [issues page](../../issues/).
+
+👤 **Gustone Alwanga**
+
+- GitHub: [@githubhandle](https://github.com/Guston-era)
+
+- LinkedIn: [LinkedIn](https://linkedin.com/in/gustone-alwanga-1a09ba14b/)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Aerial Ops
